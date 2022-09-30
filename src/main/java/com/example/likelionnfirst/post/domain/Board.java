@@ -1,5 +1,6 @@
 package com.example.likelionnfirst.post.domain;
 
+import com.example.likelionnfirst.post.dto.BoardDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,7 +9,9 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.sql.Timestamp;
+import java.util.Optional;
 
 @Data
 @NoArgsConstructor
@@ -41,4 +44,13 @@ public class Board extends BaseTimeEntity{
         this.major=major;
         this.introduce=introduce;
     }
+
+    public void update(BoardDto boardDto){
+        this.name = boardDto.getName();
+        this.age = boardDto.getAge();
+        this.major = boardDto.getMajor();
+        this.introduce = boardDto.getIntroduce();
+    }
+
+
 }
