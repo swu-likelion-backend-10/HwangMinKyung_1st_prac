@@ -11,7 +11,7 @@
   나이 : <input type="text" name="age" th:value="${boardDto.age}"> <br>
   학과 : <input type="text" name="major" th:value="${boardDto.major}"> <br>
   간단한 자기소개<br>
-  <textarea name="introduce">[[$boardDto.intoduce}]]</textarea><br>
+  <textarea name="introduce">[[${boardDto.introduce}]]</textarea><br>
 
   <input type="submit" value="수정">
 </form>
